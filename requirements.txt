@@ -1,1 +1,2 @@
-git+git://github.com/eneakllomollari/pscraper-lib@v1.0.0
+mysqlclient==1.4.6
+git+git://github.com/eneakllomollari/pscraper-lib@v2.0
