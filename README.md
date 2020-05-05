@@ -2,7 +2,8 @@
 This project contains the script that is used to schedule the daily scraping script. 
 
 ## Overview
-It uses the [schedule](https://pypi.org/project/schedule/) library to schedule daily scrape jobs. 
+It uses the [schedule](https://pypi.org/project/schedule/) library to schedule daily scrape jobs and the APIs provided by [pscraper-lib](https://github.com/eneakllomollari/pscraper-lib) to perform scraping and send reports upon completion.
+
 The scraping process is comprised of several scrape jobs which are configured in a [`config.yml`](/config.yml) file.
 Each job will run concurrently on a separate process. When all processes are complete the script
 builds and sends a slack report. The script is also responsible for configuring the logging. 
