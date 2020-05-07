@@ -27,7 +27,7 @@ def scrape_job(zip_code, search_radius, target_states, return_queue):
 
 def build_and_post_report(ret_queue):
     states = []
-    cars_et, cars_count, at_et, at_count, carmax_et, carmax_count = 0, 0, 0, 0, 0, 0
+    cars_et, cars_count, at_et, at_count, carmax_et, carmax_count = [], 0, [], 0, [], 0
     while not ret_queue.empty():
         items = ret_queue.get()
         cars, autotrader, carmax = items[0], items[1], items[2]
@@ -41,7 +41,7 @@ def build_and_post_report(ret_queue):
         carmax_count += carmax[1]
 
     states = ', '.join(set(states))
-    cars_et, at_et, carmax_et = round(cars_et, 2), round(at_et, 2), round(carmax_et, 2)
+    cars_et, at_et, carmax_et = round(max(cars_et), 2), round(max(at_et), 2), round(max(carmax_et), 2)
     send_slack_report(cars_et, cars_count, at_et, at_count, carmax_et, carmax_count, states)
 
 
