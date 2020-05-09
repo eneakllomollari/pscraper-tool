@@ -33,11 +33,11 @@ def build_and_post_report(ret_queue):
         cars, autotrader, carmax = items[0], items[1], items[2]
         states.extend(items[3])
 
-        cars_et += cars[0]
+        cars_et.append(cars[0])
         cars_count += cars[1]
-        at_et += autotrader[0]
+        at_et.append(autotrader[0])
         at_count += autotrader[1]
-        carmax_et += carmax[0]
+        carmax_et.append(carmax[0])
         carmax_count += carmax[1]
 
     states = ', '.join(set(states))
