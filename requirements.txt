@@ -1,3 +1,4 @@
 PyYAML==5.3.1
 schedule==0.6.0
+mysql==0.0.2
 git+ssh://git@github.com/eneakllomollari/pscraper-lib@v1.2.2#egg=pscraper-lib
