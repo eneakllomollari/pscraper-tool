@@ -2,5 +2,5 @@
 .vscode
 venv*
 *.out
-*.log
+logs/
 .env
