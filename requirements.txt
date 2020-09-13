@@ -1,2 +1,2 @@
 schedule==0.6.0
-git+ssh://git@github.com/eneakllomollari/pscraper-lib@v2.0.0#egg=pscraper-lib
+git+ssh://git@github.com/eneakllomollari/pscraper-lib@enea#egg=pscraper-lib

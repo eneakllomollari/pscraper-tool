@@ -4,7 +4,7 @@ import logging
 import time
 
 import schedule
-from pscraper.scraper.marketplaces import scrape_autotrader, scrape_cars
+from pscraper.scraper.marketplaces import pscrape
 from pscraper.utils.misc import send_slack_message, send_slack_report
 
 logging.basicConfig(filename=f'logs/{datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")}.log',
@@ -13,9 +13,8 @@ logging.basicConfig(filename=f'logs/{datetime.datetime.now().strftime("%d-%m-%Y 
 
 def main_job():
     try:
-        cars = scrape_cars()
-        autotrader = scrape_autotrader()
-        send_slack_report(cars, autotrader, 'All States')
+        cars, autotrader = pscrape()
+        send_slack_report([0,cars], [0,autotrader], 'All States','#debug')
     except (ValueError, IndexError, AssertionError):
         send_slack_message()
 
