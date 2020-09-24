@@ -14,7 +14,7 @@ logging.basicConfig(filename=f'logs/{datetime.datetime.now().strftime("%d-%m-%Y 
 def main_job():
     try:
         cars, autotrader = pscrape()
-        send_slack_report([0,cars], [0,autotrader], 'All States')
+        send_slack_report([0, cars], [0, autotrader], 'All States', channel='#daily-job')
     except (ValueError, IndexError, AssertionError):
         send_slack_message()
 
