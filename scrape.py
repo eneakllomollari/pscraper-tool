@@ -1,4 +1,3 @@
-#! venv3/bin/python
 import datetime
 import logging
 import time
@@ -21,9 +20,7 @@ def main_job():
 
 
 if __name__ == '__main__':
-    # 07:00 is midnight
-    schedule.every().day.at('07:00').do(main_job)
-    main_job()
+    schedule.every().day.at('07:00').do(main_job)  # 07:00 is midnight
     while True:
         schedule.run_pending()
         time.sleep(60)
